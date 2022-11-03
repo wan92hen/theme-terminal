@@ -1,0 +1,17 @@
+apiVersion: theme.halo.run/v1alpha1
+kind: Theme
+metadata:
+  name: theme-modern-starter
+spec:
+  displayName: Modern Starter
+  author:
+    name: Halo OSS Organization
+    website: https://halo.run
+  description: A development starter theme with Vite Ecosystem for Halo
+  logo: https://halo.run/logo
+  website: https://github.com/halo-sigs/theme-modern-starter
+  repo: https://github.com/halo-sigs/theme-modern-starter.git
+  settingName: "theme-modern-starter-setting"
+  configMapName: "theme-modern-starter-configMap"
+  version: 1.0.0
+  require: 2.0.0
