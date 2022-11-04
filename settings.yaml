@@ -1,39 +1,33 @@
 apiVersion: v1alpha1
 kind: Setting
 metadata:
-  name: theme-modern-starter-setting
+  name: theme-terminal-setting
 spec:
   forms:
-    - group: post
-      label: 文章
+    - group: basic
+      label: 基本设置
       formSchema:
-        - $formkit: select
-          name: content_size
-          label: 字体大小
-          value: prose-base
-          options:
-            - value: prose-base
-              label: prose-base
-            - value: prose-sm
-              label: prose-sm
-            - value: prose-lg
-              label: prose-lg
-            - value: prose-xl
-              label: prose-xl
-            - value: prose-2xl
-              label: prose-2xl
+        - $formkit: text
+          name: index_notice_title
+          label: 首页公告标题
+          value: 'Hello Halo!'
+        - $formkit: textarea
+          name: index_notice_content
+          label: 首页公告内容
+          value: '一款 Terminal 风格的 Halo 主题。'          
         - $formkit: select
           name: content_theme
           label: 颜色主题
-          value: prose-gray
+          value: orange
           options:
-            - value: prose-gray
-              label: prose-gray
-            - value: prose-slate
-              label: prose-slate
-            - value: prose-zinc
-              label: prose-zinc
-            - value: prose-neutral
-              label: prose-neutral
-            - value: prose-stone
-              label: prose-stone
+            - value: orange
+              label: 橙色
+            - value: blue
+              label: 蓝色
+            - value: green
+              label: 绿色
+            - value: pink
+              label: 粉色
+            - value: red
+              label: 红色
+

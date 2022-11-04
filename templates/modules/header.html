@@ -1,0 +1,26 @@
+<header class="header">
+    <div th:fragment="header" th:with="menu = ${menuFinder.getDefault()}">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="/">
+                    <div class="logo" th:text="${site.title}">
+                        Blog Title
+                    </div>
+                </a>
+            </div>
+        </div>
+        <nav class="menu">
+            <ul th:if="${menu != null} and ${not #lists.isEmpty(menu.menuItems)}" class="menu__inner menu__inner--desktop">
+                <li th:each="menuItem : ${menu.menuItems}">
+                    <a class="text-gray-600 hover:text-blue-600" th:href="${menuItem.status.href}" th:text="${menuItem.status.displayName}"></a>
+                    <ul th:if="${not #lists.isEmpty(menuItem.children)}" @mouseenter="open()" @mouseleave="close()" class="menu__sub-inner-more hidden">
+                        <li th:each="childMenuItem : ${menuItem.children}">
+                            <a th:href="${childMenuItem.status.href} " th:text="${childMenuItem.status.displayName} "></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+</header>

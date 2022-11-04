@@ -1,9 +1,9 @@
 apiVersion: theme.halo.run/v1alpha1
 kind: Theme
 metadata:
-  name: theme-modern-starter
+  name: theme-terminal
 spec:
-  displayName: Modern Starter
+  displayName: Terminal
   author:
     name: Halo OSS Organization
     website: https://halo.run
@@ -11,7 +11,7 @@ spec:
   logo: https://halo.run/logo
   website: https://github.com/halo-sigs/theme-modern-starter
   repo: https://github.com/halo-sigs/theme-modern-starter.git
-  settingName: "theme-modern-starter-setting"
-  configMapName: "theme-modern-starter-configMap"
+  settingName: "theme-terminal-setting"
+  configMapName: "theme-terminal-configMap"
   version: 1.0.0
   require: 2.0.0

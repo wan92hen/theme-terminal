@@ -1,7 +1,7 @@
-import "./styles/tailwind.css";
-import "./styles/main.css";
-import "@purge-icons/generated";
+import "./styles/style.css";
 
-export function count(x: number, y: number) {
-  return x + y;
-}
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+
+Alpine.start();
