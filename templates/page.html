@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+>
+  <th:block th:fragment="content">
+    <div class="post">
+      <h1 class="post-title" th:text="${singlePage.spec.title}">Post Title</h1>
+      <div class="post-meta">
+        <span class="post-date" th:text="${#dates.format(singlePage.spec.publishTime,'yyyy-MM-dd')}">
+          publishTime
+        </span>
+        <span
+          class="post-author"
+          th:with="contributor = ${singlePage.contributors[0]}"
+          th:text="${':: '+contributor.displayName}"
+          >:: Author</span
+        >
+      </div>
+      <div class="post-content">
+        <div th:utext="${singlePage.content.content}">Post Content</div>
+      </div>
+    </div>
+  </th:block>
+</html>
