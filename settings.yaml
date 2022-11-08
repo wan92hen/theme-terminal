@@ -14,20 +14,5 @@ spec:
         - $formkit: textarea
           name: index_notice_content
           label: 首页公告内容
-          value: '一款 Terminal 风格的 Halo 主题。'          
-        - $formkit: select
-          name: content_theme
-          label: 颜色主题
-          value: orange
-          options:
-            - value: orange
-              label: 橙色
-            - value: blue
-              label: 蓝色
-            - value: green
-              label: 绿色
-            - value: pink
-              label: 粉色
-            - value: red
-              label: 红色
+          value: '一款 Terminal 风格的 Halo 主题。'
 

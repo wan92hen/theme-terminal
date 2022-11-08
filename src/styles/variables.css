@@ -1,5 +1,5 @@
 :root {
-    --accent: #FFA86A;
+    --accent: #4e9a06;
     --background: color(var(--accent) blend(#1D1E28 98%));
     --color: white;
     --border-color: rgba(255, 255, 255, .1);
