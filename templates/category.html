@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+>
+  <th:block th:fragment="content">
+    <div class="content">
+      <div>
+        <span class="post-tags tag" th:title="${category.spec.displayName}" th:text="'/'+${category.spec.displayName}"
+          >/category</span
+        >
+      </div>
+      <div class="posts">
+        <div class="post on-list" th:each="post : ${posts.items}">
+          <h1 class="post-title">
+            <a th:text="${post.spec.title}" th:href="${post.status.permalink}">Post Title</a>
+          </h1>
+          <div class="post-meta">
+            <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}">
+              Post CreateTime
+            </span>
+            <span
+              class="post-author"
+              th:with="contributor = ${post.contributors[0]}"
+              th:text="${':: '+contributor.displayName}"
+              >:: Author</span
+            >
+          </div>
+          <span class="post-tags"> </span>
+          <div class="post-content" th:text="${post.status.excerpt}">Post Excerpt...</div>
+
+          <div>
+            <a class="read-more button" th:href="${post.status.permalink}">阅读更多 →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pagination" th:if="${posts.hasPrevious() || posts.hasNext()}">
+        <div class="pagination__buttons">
+          <span class="button previous" th:if="${posts.hasPrevious()}">
+            <a th:href="@{${posts.prevUrl}}">
+              <span class="button__icon">←</span>
+              <span class="button__text">上一页</span>
+            </a>
+          </span>
+          <span class="button next" th:if="${posts.hasNext()}">
+            <a th:href="@{${posts.nextUrl}}">
+              <span class="button__text">下一页</span>
+              <span class="button__icon">→</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </th:block>
+</html>
