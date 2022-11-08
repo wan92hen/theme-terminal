@@ -19,13 +19,13 @@
             <th:block th:replace="${header}" />
         </th:block>
         <th:block th:if="${header == null}">
-            <th:block th:replace="modules/header :: header(isHome = true)" />
+            <th:block th:replace="~{modules/header :: header(isHome = true)}" />
         </th:block>
 
         <th:block th:replace="${content}" />
 
         <th:block th:if="${footer == null}">
-            <th:block th:replace="modules/footer" />
+            <th:block th:replace="~{modules/footer}" />
         </th:block>
         <th:block th:if="${footer != null}">
             <th:block th:replace="${footer}" />
