@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" th:fragment="html (header, content, footer)">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${site.title}"></title>
     <link rel="stylesheet" th:href="@{/assets/dist/style.css}" href="./assets/dist/style.css" />
+    <link rel="stylesheet" type="text/css" href="${theme_base!}/static/assets/${settings.theme_color!}.css" />
     <script th:src="@{/assets/dist/main.iife.js}"></script>
+  </head>
 
+  <body class="main">
+    <div class="center headings--one-size container">
+      <th:block th:if="${header != null}">
+        <th:block th:replace="${header}" />
+      </th:block>
+      <th:block th:if="${header == null}">
+        <th:block th:replace="~{modules/header :: header(isHome = true)}" />
+      </th:block>
 
+      <th:block th:replace="${content}" />
 
-</head>
-
-<body class="orange">
-    <div class="container center headings--one-size">
-        <th:block th:if="${header != null}">
-            <th:block th:replace="${header}" />
-        </th:block>
-        <th:block th:if="${header == null}">
-            <th:block th:replace="~{modules/header :: header(isHome = true)}" />
-        </th:block>
-
-        <th:block th:replace="${content}" />
-
-        <th:block th:if="${footer == null}">
-            <th:block th:replace="~{modules/footer}" />
-        </th:block>
-        <th:block th:if="${footer != null}">
-            <th:block th:replace="${footer}" />
-        </th:block>
+      <th:block th:if="${footer == null}">
+        <th:block th:replace="~{modules/footer}" />
+      </th:block>
+      <th:block th:if="${footer != null}">
+        <th:block th:replace="${footer}" />
+      </th:block>
     </div>
-</body>
-
+  </body>
 </html>

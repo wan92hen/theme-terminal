@@ -1,11 +1,11 @@
 :root {
-    --accent: #4e9a06;
-    --background: color(var(--accent) blend(#1D1E28 98%));
-    --color: white;
-    --border-color: rgba(255, 255, 255, .1);
-    /* variables for js, must be the same as these in @custom-media queries */
-    --phoneWidth: (max-width: 684px);
-    --tabletWidth: (max-width: 900px);
+  --accent: #4e9a06;
+  --background: color(var(--accent) blend(#1d1e28 98%));
+  --color: white;
+  --border-color: rgba(255, 255, 255, 0.1);
+  /* variables for js, must be the same as these in @custom-media queries */
+  --phoneWidth: (max-width: 684px);
+  --tabletWidth: (max-width: 900px);
 }
 
 @custom-media --phone (max-width: 684px);

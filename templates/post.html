@@ -1,44 +1,52 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}">
-<th:block th:fragment="content">
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+>
+  <th:block th:fragment="content">
     <div class="post">
-        <h1 class="post-title" th:text="${post.spec.title}">Post Title</h1>
-        <div class="post-meta">
-            <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}">
-        publishTime
+      <h1 class="post-title" th:text="${post.spec.title}">Post Title</h1>
+      <div class="post-meta">
+        <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"> publishTime </span>
+        <span
+          class="post-author"
+          th:with="contributor = ${post.contributors[0]}"
+          th:text="${':: '+contributor.displayName}"
+          >:: Author</span
+        >
+      </div>
+      <span class="post-tags" th:each="tag : ${post.tags}">
+        <a
+          th:href="${tag.status.permalink}"
+          th:title="${tag.spec.displayName}"
+          th:text="'#'+${tag.spec.displayName}"
+          class="tag"
+          >#Tag</a
+        >&nbsp;
       </span>
-            <span class="post-author" th:with="contributor = ${post.contributors[0]}" th:text="${':: '+contributor.displayName}">:: Author</span>
-        </div>
-        <span class="post-tags" th:each="tag : ${post.tags}">
-      <a th:href="${tag.status.permalink}" th:title="${tag.spec.displayName}" th:text="'#'+${tag.spec.displayName}"
-        class="tag">#Tag</a>&nbsp;
-    </span>
-        <div class="post-content">
-            <div th:utext="${post.content.content}">
-                Post Content
-            </div>
-        </div>
+      <div class="post-content">
+        <div th:utext="${post.content.content}">Post Content</div>
+      </div>
     </div>
     <div class="pagination">
-        <div class="pagination__title">
-            <span class="pagination__title-h">其他文章</span>
-            <hr />
-        </div>
-        <div class="pagination__buttons" th:with="postCursor=${postFinder.cursor(post.metadata?.name)}">
-            <span th:if="${postCursor.hasPrevious()}" class="button previous">
-            <a th:href="${postCursor.previous?.status?.permalink}">
-              <span class="button__icon">←</span>
+      <div class="pagination__title">
+        <span class="pagination__title-h">其他文章</span>
+        <hr />
+      </div>
+      <div class="pagination__buttons" th:with="postCursor=${postFinder.cursor(post.metadata?.name)}">
+        <span th:if="${postCursor.hasPrevious()}" class="button previous">
+          <a th:href="${postCursor.previous?.status?.permalink}">
+            <span class="button__icon">←</span>
             <span class="button__text" th:text="${postCursor.previous?.spec?.title}">prevPost</span>
-            </a>
-            </span>
-            <span th:if="${postCursor.hasNext()}" class="button next">
-            <a th:href="${postCursor.next?.status?.permalink}">
-              <span class="button__text" th:text="${postCursor.next?.spec?.title}">nextPost</span>
+          </a>
+        </span>
+        <span th:if="${postCursor.hasNext()}" class="button next">
+          <a th:href="${postCursor.next?.status?.permalink}">
+            <span class="button__text" th:text="${postCursor.next?.spec?.title}">nextPost</span>
             <span class="button__icon">→</span>
-            </a>
-            </span>
-        </div>
+          </a>
+        </span>
+      </div>
     </div>
-</th:block>
-
+  </th:block>
 </html>
