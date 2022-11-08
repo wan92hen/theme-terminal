@@ -20,8 +20,8 @@
 .post {
     width: 100%;
     text-align: left;
-    margin: 20px auto;
-    padding: 20px 0;
+    margin: 10px auto;
+    padding: 10px 0;
     @media (--tablet) {
         max-width: 660px;
     }
