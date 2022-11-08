@@ -1,8 +1,8 @@
 {
-    "name": "@halo-dev/theme-modern-starter",
+    "name": "@halo-dev/theme-terminal",
     "private": true,
-    "version": "0.0.0",
-    "description": "A development starter theme with modern front-end technology stack for Halo",
+    "version": "0.0.1",
+    "description": "A terminal like theme for Halo.",
     "scripts": {
         "dev": "vite build --watch",
         "build": "tsc && vite build",
@@ -13,25 +13,17 @@
         "halo",
         "halo-theme"
     ],
-    "homepage": "https://github.com/halo-sigs/theme-modern-starter#readme",
+    "homepage": "https://github.com/wan92hen/theme-terminal#readme",
     "bugs": {
-        "url": "https://github.com/halo-sigs/theme-modern-starter/issues"
+        "url": "https://github.com/wan92hen/theme-terminal/issues"
     },
     "author": {
-        "name": "Halo OSS Organization",
-        "url": "https://github.com/halo-dev",
-        "email": "hi@halo.run"
+        "name": "BugKing",
+        "url": "https://github.com/wan92hen"
     },
-    "maintainers": [
-        {
-            "name": "Ryan Wang",
-            "url": "https://github.com/ruibaby",
-            "email": "i@ryanc.cc"
-        }
-    ],
-    "license": "GPL-3.0",
+    "license": "MIT",
     "repository": {
-        "url": "https://github.com/halo-sigs/theme-modern-starter",
+        "url": "https://github.com/wan92hen/theme-terminal",
         "type": "git"
     },
     "devDependencies": {
