@@ -5,13 +5,13 @@ metadata:
 spec:
   displayName: Terminal
   author:
-    name: Halo OSS Organization
-    website: https://halo.run
-  description: A development starter theme with Vite Ecosystem for Halo
+    name: BugKing
+    website: https://github.com/wan92hen
+  description: 一款 Terminal 风格的 Halo 主题。
   logo: https://halo.run/logo
-  website: https://github.com/halo-sigs/theme-modern-starter
-  repo: https://github.com/halo-sigs/theme-modern-starter.git
+  website: https://github.com/wang92hen/theme-terminal.git
+  repo: https://github.com/wang92hen/theme-terminal.git
   settingName: "theme-terminal-setting"
   configMapName: "theme-terminal-configMap"
-  version: 1.0.0
+  version: 0.0.1
   require: 2.0.0
