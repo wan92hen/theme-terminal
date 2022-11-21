@@ -29,7 +29,7 @@
 
     &:after {
       content: '';
-      background: repeating-linear-gradient(90deg, var(--accent), var(--accent) 2px, transparent 0, transparent 16px);
+      background: repeating-linear-gradient(90deg, var(--foreground), var(--foreground) 2px, transparent 0, transparent 16px);
       display: block;
       width: 100%;
       right: 10px;
@@ -50,10 +50,11 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      color: var(--green);
 
       li {
         &.active {
-          color: var(--accent-alpha-70);
+          color: var(--cyan);
         }
 
         &:not(:last-of-type) {
@@ -80,7 +81,7 @@
         left: 0;
 
         &-trigger {
-          color: var(--accent);
+          color: var(--foreground);
           user-select: none;
           cursor: pointer;
         }
