@@ -5,50 +5,38 @@
 >
   <th:block th:fragment="content">
     <div class="content">
-      <div>
-        <span class="post-tags tag" th:title="${category.spec.displayName}" th:text="'/'+${category.spec.displayName}"
-          >/category</span
+      <div class="post">
+        <h1
+          class="post-title"
+          th:text="'分类：'+${category.spec.displayName}+' ('+${category.status.visiblePostCount}+' 篇文章)'"
         >
-      </div>
-      <div class="posts">
-        <div class="post on-list" th:each="post : ${posts.items}">
-          <h1 class="post-title">
-            <a th:text="${post.spec.title}" th:href="${post.status.permalink}">Post Title</a>
-          </h1>
-          <div class="post-meta">
-            <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}">
-              Post CreateTime
-            </span>
-            <span
-              class="post-author"
-              th:with="contributor = ${post.contributors[0]}"
-              th:text="${':: '+contributor.displayName}"
-              >:: Author</span
-            >
-          </div>
-          <span class="post-tags"> </span>
-          <div class="post-content" th:text="${post.status.excerpt}">Post Excerpt...</div>
+          category: #{{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+        </h1>
 
-          <div>
-            <a class="read-more button" th:href="${post.status.permalink}">阅读更多 →</a>
-          </div>
-        </div>
-      </div>
-      <div class="pagination" th:if="${posts.hasPrevious() || posts.hasNext()}">
-        <div class="pagination__buttons">
-          <span class="button previous" th:if="${posts.hasPrevious()}">
-            <a th:href="@{${posts.prevUrl}}">
-              <span class="button__icon">←</span>
-              <span class="button__text">上一页</span>
+        <a href="/categories"> 所有分类 </a>
+
+        <ul>
+          <li class="post-list" th:each="post : ${posts.items}">
+            <a th:href="${post.status.permalink}">
+              <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
+                >{{ page.date }}</span
+              >
+              :: <span class="post-list-title" th:text="${post.spec.title}">{{ page.title }}</span></a>
+              <span class="post-tags-inline">
+                ::
+                <span th:each="tag : ${post.tags}">
+                  <a
+                  th:href="${tag.status.permalink}"
+                  th:title="${tag.spec.displayName}"
+                  th:text="'#'+${tag.spec.displayName}"
+                  class="post-tag"
+                  >#Tag
+                </a>
+                </span>
+              </span>
             </a>
-          </span>
-          <span class="button next" th:if="${posts.hasNext()}">
-            <a th:href="@{${posts.nextUrl}}">
-              <span class="button__text">下一页</span>
-              <span class="button__icon">→</span>
-            </a>
-          </span>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
   </th:block>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+>
+  <th:block th:fragment="content">
+    <div class="content">
+      <div class="post">
+        <h1 class="post-title">所有分类</h1>
+      </div>
+      <ul>
+        <li th:replace="~{modules/category-tree :: single(categories=${categories})}" />
+      </ul>
+    </div>
+  </th:block>
+</html>

@@ -1,0 +1,10 @@
+<ul th:fragment="next (categories)">
+  <li th:fragment="single (categories)" th:each="category : ${categories}">
+    <a th:href="@{${category.status.permalink}}">
+      <span th:text="${category.spec.displayName}+' ('+${category.status.visiblePostCount}+' 篇文章)'"> </span>
+    </a>
+    <th:block th:if="${not #lists.isEmpty(category.children)}">
+      <th:block th:replace="~{modules/category-tree :: next (categories=${category.children})}"></th:block>
+    </th:block>
+  </li>
+</ul>
