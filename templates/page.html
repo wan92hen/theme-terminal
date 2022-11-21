@@ -10,12 +10,7 @@
         <span class="post-date" th:text="${#dates.format(singlePage.spec.publishTime,'yyyy-MM-dd')}">
           publishTime
         </span>
-        <span
-          class="post-author"
-          th:with="contributor = ${singlePage.contributors[0]}"
-          th:text="${':: '+contributor.displayName}"
-          >:: Author</span
-        >
+        <span class="post-author" th:text="${':: '+singlePage.owner.displayName}">:: Author</span>
       </div>
       <div class="post-content">
         <div th:utext="${singlePage.content.content}">Post Content</div>
