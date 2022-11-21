@@ -13,5 +13,5 @@ spec:
   repo: https://github.com/wang92hen/theme-terminal.git
   settingName: "theme-terminal-setting"
   configMapName: "theme-terminal-configMap"
-  version: 0.0.1
+  version: 0.0.3
   require: 2.0.0
