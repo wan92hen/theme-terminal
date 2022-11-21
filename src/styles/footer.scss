@@ -1,7 +1,9 @@
+@import "variables";
+
 .footer {
   padding: 40px 0;
   flex-grow: 0;
-  opacity: 0.5;
+  opacity: .5;
 
   &__inner {
     display: flex;
@@ -11,7 +13,7 @@
     width: 760px;
     max-width: 100%;
 
-    @media (--tablet) {
+    @media (max-width: $tablet-max-width) {
       flex-direction: column;
     }
   }
@@ -35,16 +37,28 @@
     & > *:first-child:not(:only-child) {
       margin-right: 10px;
 
-      @media (--tablet) {
+       @media (max-width: $tablet-max-width) {
         border: none;
         padding: 0;
         margin: 0;
       }
     }
 
-    @media (--tablet) {
+    @media (max-width: $tablet-max-width) {
       flex-direction: column;
       margin-top: 10px;
+    }
+  }
+
+  .copyright-theme-sep {
+    @media (max-width: $tablet-max-width) {
+      display: none;
+    }
+  }
+
+  .copyright-theme {
+    @media (max-width: $tablet-max-width) {
+      font-size: 0.75rem;
     }
   }
 }

@@ -1,82 +1,97 @@
-.index-content {
-  margin-top: 20px;
-}
-
-.framed {
-  border: 1px solid var(--accent);
-  padding: 20px;
-  *:first-child {
-    margin-top: 0;
-  }
-  *:last-child {
-    margin-bottom: 0;
-  }
-}
+@import "variables";
 
 .posts {
   width: 100%;
+  margin: 0 auto;
 }
 
 .post {
   width: 100%;
   text-align: left;
-  margin: 10px auto;
-  padding: 10px 0;
-  @media (--tablet) {
+  margin: 20px auto;
+  padding: 20px 0;
+
+  @media (max-width: $tablet-max-width) {
     max-width: 660px;
   }
+
   &:not(:last-of-type) {
     border-bottom: 1px solid var(--border-color);
   }
-  &-meta {
+
+  %meta {
     font-size: 1rem;
     margin-bottom: 10px;
-    color: color(var(--accent) a(70%));
+    color: var(--accent-alpha-70);
   }
+
+  &-meta {
+    @extend %meta;
+  }
+
+  &-meta-inline {
+    @extend %meta;
+
+    display: inline;
+  }
+
   &-title {
-    --border: 3px dotted var(--accent);
+    --border: 2px dashed var(--accent);
     position: relative;
     color: var(--accent);
     margin: 0 0 15px;
     padding-bottom: 15px;
     border-bottom: var(--border);
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 2px;
-      display: block;
-      width: 100%;
-      border-bottom: var(--border);
-    }
+    font-weight: normal;
+
     a {
       text-decoration: none;
     }
   }
-  &-tags {
+
+  %tags {
     margin-bottom: 20px;
     font-size: 1rem;
-    opacity: 0.5;
-    a {
-      text-decoration: none;
+    opacity: .5;
+  }
+
+  &-tags {
+    @extend %tags;
+
+    display: block;
+  }
+
+  &-tags-inline {
+    @extend %tags;
+
+    display: inline;
+
+    @media (max-width: $phone-max-width) {
+      display: block;
     }
   }
+
   &-content {
     margin-top: 30px;
   }
+
   &-cover {
     border: 20px solid var(--accent);
     background: transparent;
     margin: 40px 0;
     padding: 20px;
-    @media (--phone) {
+
+    @media (max-width: $phone-max-width) {
       padding: 10px;
       border-width: 10px;
     }
   }
+
   ul {
     list-style: none;
-    li:not(:empty):before {
-      content: "-";
+
+    li:before {
+      content: '►';
       position: absolute;
       left: -20px;
       color: var(--accent);
@@ -88,28 +103,33 @@
   h1 {
     justify-content: center;
   }
+
   h2 {
     justify-content: center;
     margin-bottom: 10px;
-    & + h2 {
+
+    &+ h2 {
       margin-top: -10px;
       margin-bottom: 20px;
     }
   }
 }
 
-.hanchor {
-  text-decoration: none;
-  margin-left: 10px;
-  visibility: hidden;
-}
+.post-list {
+  .post-date {
+    color: var(--accent-alpha-70);
+    text-decoration: none;
+  }
 
-h1:hover a,
-h2:hover a,
-h3:hover a,
-h4:hover a {
-  visibility: visible;
-}
+  a {
+    text-decoration: none;
+  }
 
-.footnotes {
+  .post-list-title {
+    text-decoration: underline;
+  }
+
+  .post-tag {
+    text-decoration: underline;
+  }
 }
