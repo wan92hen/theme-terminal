@@ -48,10 +48,11 @@ jobs:
       - name: Compress zip
         run: |
           PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
-          PRE_ZIP_FOLDER=theme-anatole-${PACKAGE_VERSION}
+          PACKAGE_NAME=${GITHUB_REPOSITORY##*/}
+          PRE_ZIP_FOLDER=${PACKAGE_NAME}-${PACKAGE_VERSION}
           ARTIFACT_NAME=${PRE_ZIP_FOLDER}.zip
           ARTIFACT_PATHNAME=dist/${ARTIFACT_NAME}
-          echo "theme-anatole version $PACKAGE_VERSION"
+          echo "${PACKAGE_NAME} version $PACKAGE_VERSION"
           echo "Artifact name: ${ARTIFACT_NAME}"
           echo "Artifact pathname: ${ARTIFACT_PATHNAME}"
           echo "PACKAGE_VERSION=${PACKAGE_VERSION}" >> $GITHUB_ENV
@@ -65,7 +66,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: theme-anatole
+          name: ${PACKAGE_NAME}
           path: |
             dist/*.zip
           retention-days: 7
@@ -107,10 +108,10 @@ jobs:
       - name: Compress zip
         run: |
           PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
-          PRE_ZIP_FOLDER=theme-anatole-${PACKAGE_VERSION}
+          PRE_ZIP_FOLDER=${PACKAGE_NAME}-${PACKAGE_VERSION}
           ARTIFACT_NAME=${PRE_ZIP_FOLDER}.zip
           ARTIFACT_PATHNAME=dist/${ARTIFACT_NAME}
-          echo "theme-anatole version $PACKAGE_VERSION"
+          echo "${PACKAGE_NAME} version $PACKAGE_VERSION"
           echo "Artifact name: ${ARTIFACT_NAME}"
           echo "Artifact pathname: ${ARTIFACT_PATHNAME}"
           echo "PACKAGE_VERSION=${PACKAGE_VERSION}" >> $GITHUB_ENV
