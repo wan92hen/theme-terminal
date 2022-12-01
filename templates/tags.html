@@ -7,14 +7,13 @@
     <div class="content">
       <div class="post">
         <h1 class="post-title">所有标签</h1>
-
-        <ul th:with="tags = ${tagFinder.listAll()}">
-          <li th:each="tagItem, tagStat: ${tags}" class="tag-list">
+        <ul>
+          <li th:each="tag: ${tags}" class="tag-list">
             <a
-              href="@{${tagItem.status.permalink}}"
-              th:text="${tagItem.spec.displayName}+' ('+${tagItem.status.visiblePostCount}+' 篇文章)'"
+              th:href="${tag.status.permalink}"
+              th:text="${tag.spec.displayName}+' ('+${tag.status.visiblePostCount}+' 篇文章)'"
             >
-              {{ term.name }} ({{ term.pages | length }} post{{ term.pages | length | pluralize }})
+              标签名 (n 篇文章)
             </a>
           </li>
         </ul>

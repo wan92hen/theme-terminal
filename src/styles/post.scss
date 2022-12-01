@@ -30,6 +30,10 @@
   @media (max-width: $tablet-max-width) {
     max-width: 660px;
   }
+  
+  &:not(:last-of-type) {
+    border-bottom: 1px solid var(--foreground);
+  }  
 
   %meta {
     font-size: 1rem;

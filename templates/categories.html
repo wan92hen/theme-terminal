@@ -7,10 +7,10 @@
     <div class="content">
       <div class="post">
         <h1 class="post-title">所有分类</h1>
+        <ul>
+          <li th:replace="~{modules/category-tree :: single(categories=${categories})}" />
+        </ul>
       </div>
-      <ul>
-        <li th:replace="~{modules/category-tree :: single(categories=${categories})}" />
-      </ul>
     </div>
   </th:block>
 </html>
