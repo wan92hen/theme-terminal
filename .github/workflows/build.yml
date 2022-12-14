@@ -50,7 +50,7 @@ jobs:
       - name: Compress zip
         run: |
           PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
-          PACKAGE_NAME=${GITHUB_REPOSITORY_NAME_PART}
+          PACKAGE_NAME=${GITHUB_REPOSITORY_NAME_PART_SLUG}
           PRE_ZIP_FOLDER=${PACKAGE_NAME}-${PACKAGE_VERSION}
           ARTIFACT_NAME=${PRE_ZIP_FOLDER}.zip
           ARTIFACT_PATHNAME=dist/${ARTIFACT_NAME}
@@ -107,9 +107,12 @@ jobs:
       - name: Build distribution
         run: |
           pnpm build
+      - name: Inject slug/short variables
+        uses: rlespinasse/github-slug-action@v4            
       - name: Compress zip
         run: |
           PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+          PACKAGE_NAME=${GITHUB_REPOSITORY_NAME_PART_SLUG}          
           PRE_ZIP_FOLDER=${PACKAGE_NAME}-${PACKAGE_VERSION}
           ARTIFACT_NAME=${PRE_ZIP_FOLDER}.zip
           ARTIFACT_PATHNAME=dist/${ARTIFACT_NAME}
