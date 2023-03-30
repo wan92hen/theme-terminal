@@ -31,14 +31,14 @@
       <div class="pagination__buttons" th:with="postCursor=${postFinder.cursor(post.metadata?.name)}">
         <span th:if="${postCursor.hasPrevious()}" class="button previous">
           <a th:href="${postCursor.previous?.status?.permalink}">
-            <span class="button__icon">←&nbsp;</span>
+            <span class="button__icon"><&nbsp;</span>
             <span class="button__text" th:text="${postCursor.previous?.spec?.title}">prevPost</span>
           </a>
         </span>
         <span th:if="${postCursor.hasNext()}" class="button next">
           <a th:href="${postCursor.next?.status?.permalink}">
             <span class="button__text" th:text="${postCursor.next?.spec?.title}">nextPost</span>
-            <span class="button__icon">&nbsp;→</span>
+            <span class="button__icon">&nbsp;></span>
           </a>
         </span>
       </div>
