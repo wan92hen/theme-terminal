@@ -37,7 +37,7 @@
           <div class="post-content" th:text="${post.status.excerpt}">Post Excerpt...</div>
 
           <div>
-            <a class="read-more button" th:href="${post.status.permalink}">阅读更多 →</a>
+            <a class="read-more button" th:href="${post.status.permalink}">阅读更多 ></a>
           </div>
         </div>
       </div>
@@ -45,14 +45,14 @@
         <div class="pagination__buttons">
           <span class="button previous" th:if="${posts.hasPrevious()}">
             <a th:href="@{${posts.prevUrl}}">
-              <span class="button__icon">←</span>
+              <span class="button__icon"><&nbsp;</span>
               <span class="button__text">上一页</span>
             </a>
           </span>
           <span class="button next" th:if="${posts.hasNext()}">
             <a th:href="@{${posts.nextUrl}}">
               <span class="button__text">下一页</span>
-              <span class="button__icon">→</span>
+              <span class="button__icon">&nbsp;></span>
             </a>
           </span>
         </div>

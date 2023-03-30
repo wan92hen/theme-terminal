@@ -42,14 +42,14 @@
         <div class="pagination__buttons">
           <span class="button previous" th:if="${posts.hasPrevious()}">
             <a th:href="@{${posts.prevUrl}}">
-              <span class="button__icon">←</span>
+              <span class="button__icon"><</span>
               <span class="button__text">上一页</span>
             </a>
           </span>
           <span class="button next" th:if="${posts.hasNext()}">
             <a th:href="@{${posts.nextUrl}}">
               <span class="button__text">下一页</span>
-              <span class="button__icon">→</span>
+              <span class="button__icon">></span>
             </a>
           </span>
         </div>
