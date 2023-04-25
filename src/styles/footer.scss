@@ -1,12 +1,13 @@
 @import "variables";
 
 .footer {
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   flex-grow: 0;
   opacity: .5;
 
   &__inner {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -60,5 +61,19 @@
     @media (max-width: $tablet-max-width) {
       font-size: 0.75rem;
     }
+  }
+  .beian {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-basis: 100%;
+    align-items: center;
+    font-size: 1rem;
+    color: var(--light-color-secondary);
+
+    span {
+      padding: 0 8px;
+    }
+
   }
 }

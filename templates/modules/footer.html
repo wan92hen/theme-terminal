@@ -1,9 +1,30 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="copyright">
-      <span>© 2022 Powered by <a href="https://halo.run/">Halo</a></span>
+      <span
+        >© <span th:text="${#dates.year(#dates.createNow())}">2023</span> Powered by
+        <a href="https://halo.run/">Halo</a></span
+      >
 
       <span>:: Theme <a href="https://github.com/wan92hen/theme-terminal">Terminal</a></span>
+    </div>
+    <div class="beian">
+      <span>
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          th:href="${theme.config.beian.icp_link}"
+          th:text="${theme.config.beian.icp_text}"
+        ></a
+      ></span>
+      <span>
+        <a
+          href="https://www.beian.gov.cn/"
+          target="_blank"
+          th:href="${theme.config.beian.gongan_link}"
+          th:text="${theme.config.beian.gongan_text}"
+        ></a
+      ></span>
     </div>
   </div>
 </footer>
