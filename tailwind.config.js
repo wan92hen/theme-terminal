@@ -4,7 +4,16 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+    Icons(() => ({
+      pixelarticons: {
+        includeAll: true,
+      },
+    })),
+  ],
+  darkMode: ['class', '[data-theme="dark"]'],
   safelist: [
     "prose-sm",
     "prose-base",

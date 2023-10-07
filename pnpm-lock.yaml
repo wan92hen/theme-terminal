@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@iconify/iconify': ^3.0.0
   '@iconify/json': ^2.1.132
+  '@tailwindcss/aspect-ratio': ^0.4.2
   '@tailwindcss/typography': ^0.5.7
   '@types/alpinejs': ^3.7.1
   '@types/node': ^16.18.3
@@ -27,6 +28,7 @@ dependencies:
 
 devDependencies:
   '@iconify/json': 2.1.132
+  '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.1
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
   '@types/alpinejs': 3.7.1
   '@types/node': 16.18.3
@@ -162,6 +164,14 @@ packages:
     resolution: {integrity: sha512-s2t+1oVtGDV6KtqfCXtUOhxfeYvOdDF90IVm+nMs/6bUP0HeGZLslguuL/AibpwtfL4FA/oCsIu/RhwapgAdJw==}
     dependencies:
       '@iconify/iconify': 3.0.0
+    dev: true
+
+  /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.2.1:
+    resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.1_postcss@8.4.30
     dev: true
 
   /@tailwindcss/typography/0.5.7_tailwindcss@3.2.1:
