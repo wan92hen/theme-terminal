@@ -171,7 +171,7 @@ packages:
     peerDependencies:
       tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
     dependencies:
-      tailwindcss: 3.2.1_postcss@8.4.30
+      tailwindcss: 3.2.1
     dev: true
 
   /@tailwindcss/typography/0.5.7_tailwindcss@3.2.1:
