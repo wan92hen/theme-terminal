@@ -23,6 +23,15 @@
         <div th:utext="${post.content.content}">Post Content</div>
       </div>
     </div>
+    <div th:if="${haloCommentEnabled}">
+      <h2>评论</h2>
+      <halo:comment
+        group="content.halo.run"
+        kind="Post"
+        th:attr="name=${post.metadata.name}"
+        colorScheme="localStorage.getItem('theme')"
+      />
+    </div>
     <div class="pagination">
       <div class="pagination__title">
         <span class="pagination__title-h">其他文章</span>
