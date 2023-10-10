@@ -14,4 +14,4 @@ spec:
   settingName: "theme-terminal-setting"
   configMapName: "theme-terminal-configMap"
   version: 0.0.7
-  require: 2.0.0
+  require: ">=2.8.0"
