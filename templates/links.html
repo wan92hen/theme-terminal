@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+>
+  <th:block th:fragment="content">
+    <script th:src="@{/assets/libs/pixelit.js}"></script>
+    <div>
+      <section class="">
+        <div class="">
+          <div class="mb-6" th:each="group : ${groups}">
+            <div class="">
+              <h2
+                class="post-title"
+                th:text="${!#strings.isEmpty(group.spec.displayName) ? group.spec.displayName:'友情链接'}"
+              >
+                链接分组
+              </h2>
+            </div>
+            <div class="">
+              <a th:each="link : ${group.links}" th:href="${link.spec.url}" target="_blank" class="mb-2 block">
+                <div class="flex bg-[#a9c1e2] dark:bg-[#3b5070] p-1">
+                  <div class="">
+                    <img class="w-16" src="sky.jpg" th:src="${link.spec.logo}" id="pixelitimg" th:alt="${link.spec.displayName}">
+                  </div>
+                  <div class="ml-4 flex flex-col justify-around">
+                      <div class="m-0 text-[#003e8a] dark:text-[#6ca4f8]"><span th:text="${link.spec.displayName}"></span><span th:text="| (${link.spec.url})|"></span></div>
+                      <div class="m-0 text-[#3e3e3e] dark:text-[#8b949e]" th:text="${link.spec.description}"></div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        //create object
+        const px = new pixelit();
+        px.draw().pixelate();
+      </script>
+    </div>
+  </th:block>
+</html>
