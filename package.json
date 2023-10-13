@@ -1,7 +1,7 @@
 {
     "name": "theme-terminal",
     "private": true,
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "A terminal like theme for Halo.",
     "scripts": {
         "dev": "vite build --watch",
