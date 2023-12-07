@@ -1,0 +1,14 @@
+/* 光标样式 */
+.typed-text::after {
+content: '|';
+display: inline-block;
+opacity: 0;
+animation: blink 0.7s infinite alternate; /* 闪烁动画 */
+}
+
+/* 闪烁动画 */
+@keyframes blink {
+to {
+    opacity: 1;
+}
+}

@@ -6,8 +6,8 @@
   <th:block th:fragment="content">
     <div class="content">
       <div class="index-content framed">
-        <h1 th:text="${theme.config.basic.index_notice_title}"></h1>
-        <p th:utext="${theme.config.basic.index_notice_content}"></p>
+        <h1 class="typed-text" th:text="${theme.config.basic.index_notice_title}"></h1>
+        <div th:utext="${theme.config.basic.index_notice_content}"></div>
       </div>
       <div class="posts">
         <div class="post on-list" th:each="post : ${posts.items}">
@@ -58,5 +58,25 @@
         </div>
       </div>
     </div>
+    <script>
+      // 获取容器
+      const typedTextContainer = document.querySelector('.typed-text');
+  
+      // 打字机效果的实现
+      function typeWriter(container) {
+        text = container.innerText;
+        container.innerText = '';
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            container.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, Math.random() * 200 + 50);
+          }
+        }
+        type();
+      }
+      typeWriter(typedTextContainer);
+    </script>
   </th:block>
 </html>
