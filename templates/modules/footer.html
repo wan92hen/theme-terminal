@@ -9,7 +9,7 @@
       <span>:: Theme <a href="https://github.com/wan92hen/theme-terminal">Terminal</a></span>
     </div>
     <div class="beian">
-      <span>
+      <span th:if="${not #strings.isEmpty(theme.config.beian.icp_text)}">
         <a
           href="https://beian.miit.gov.cn/"
           target="_blank"
@@ -17,7 +17,8 @@
           th:text="${theme.config.beian.icp_text}"
         ></a
       ></span>
-      <span>
+      <span th:if="${not #strings.isEmpty(theme.config.beian.gongan_text)}">
+        <img th:src="@{/assets/image/gongan.png}" style="display:inline-block; height: 1.2em;">
         <a
           href="https://www.beian.gov.cn/"
           target="_blank"

@@ -70,8 +70,12 @@
     align-items: center;
     font-size: 1rem;
     color: var(--light-color-secondary);
+    margin-top: 8px;
 
     span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
       padding: 0 8px;
     }
 
