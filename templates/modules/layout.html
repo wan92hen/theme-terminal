@@ -7,6 +7,11 @@
     <title th:text="${site.title}"></title>
     <link rel="stylesheet" th:href="@{/assets/dist/style.css}" href="./assets/dist/style.css" />
     <script th:src="@{/assets/dist/main.iife.js}"></script>
+    <style th:if="${theme.config.basic.pixel_style}">
+      body {
+        font-family: Ark-Pixel-12-proportional-zh_cn, serif;
+      }
+    </style>
   </head>
 
   <body class="main">

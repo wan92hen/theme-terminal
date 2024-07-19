@@ -15,6 +15,10 @@ spec:
           name: index_notice_content
           label: 首页公告内容
           value: '一款 Terminal 风格的 Halo 主题。'
+        - $formkit: checkbox
+          name: pixel_style
+          label: 像素化风格
+          help: 开启后，将使用像素风格字体及图标。
     - group: beian
       label: 备案设置
       formSchema:
