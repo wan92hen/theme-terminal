@@ -14,7 +14,7 @@ module.exports = {
       },
     })),
   ],
-  darkMode: ['class', '[data-theme="dark"]'],
+  darkMode: ['class', '[data-color-scheme="dark"]'],
   safelist: [
     "prose-sm",
     "prose-base",

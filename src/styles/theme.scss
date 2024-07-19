@@ -1,4 +1,4 @@
-html[data-theme='light'] {
+html[data-color-scheme='light'] {
     --black: #3e3e3e;
     --red: #970b16;
     --green: #07962a;
@@ -21,7 +21,7 @@ html[data-theme='light'] {
     --selectionBackground: #a9c1e2;
 }
 
-html[data-theme='dark'] {
+html[data-color-scheme='dark'] {
     --black: #000000;
     --red: #f78166;
     --green: #56d364;
@@ -44,7 +44,7 @@ html[data-theme='dark'] {
     --selectionBackground: #3b5070;
 }
 
-[data-theme='light'] .d-block-light,
-[data-theme='dark'] .d-block-dark {
+[data-color-scheme='light'] .d-block-light,
+[data-color-scheme='dark'] .d-block-dark {
     display: block !important;
 }
