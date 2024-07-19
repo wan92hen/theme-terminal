@@ -34,19 +34,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
 }
 
 h2 {
   font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: .75rem;
 }
 
 h3 {
   font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
 }
 
 h4, h5, h6 {
   font-size: 1.15rem;
+  margin-top: .5rem;
+  margin-bottom: .25rem;
 }
 
 
@@ -73,7 +81,8 @@ img {
 }
 
 p {
-  margin-bottom: 20px;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
 }
 
 figure {
@@ -124,15 +133,14 @@ figure {
 code {
   font-family: Hack, Monaco, Consolas, 'Ubuntu Mono', PingHei, 'PingFang SC', 'Microsoft YaHei', monospace;
   font-feature-settings: normal;
-  background: var(--accent-alpha-20);
-  padding: 1px 6px;
-  margin: 0 2px;
+  background: var(--selectionBackground);
+  padding: 1px 4px;
+  margin: 0 4px;
   font-size: .95rem;
 }
 
 pre {
   font-family: Hack, Monaco, Consolas, 'Ubuntu Mono', PingHei, 'PingFang SC', 'Microsoft YaHei', monospace;
-  padding: 20px;
   font-size: .95rem;
   overflow: auto;
   border-top: 1px solid rgba(255, 255, 255, .1);
@@ -153,8 +161,9 @@ pre {
 blockquote {
   border-top: 1px solid var(--foreground);
   border-bottom: 1px solid var(--foreground);
-  margin: 40px 0;
-  padding: 25px;
+  border-left: .5rem solid var(--foreground);
+  margin: 2rem 0;
+  padding: 1rem;
 
   @media (max-width: $phone-max-width) {
     padding-right: 0;
@@ -181,13 +190,6 @@ blockquote {
     position: relative;
   }
 
-  p:before {
-    content: '>';
-    display: block;
-    position: absolute;
-    left: -25px;
-    color: var(--foreground);
-  }
 }
 
 table {
@@ -212,6 +214,12 @@ ul, ol {
 
   li {
     position: relative;
+    
+    p {
+      margin-top: .125rem;
+      margin-bottom: .125rem;
+    }
+
   }
 
   @media (max-width: $phone-max-width) {
@@ -219,8 +227,8 @@ ul, ol {
   }
 }
 
-ol ol {
-  list-style-type: lower-alpha;
+ol {
+  list-style-type: decimal;
 }
 
 .container {

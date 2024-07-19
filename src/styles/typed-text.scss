@@ -4,6 +4,7 @@ content: '|';
 display: inline-block;
 opacity: 0;
 animation: blink 0.7s infinite alternate; /* 闪烁动画 */
+vertical-align: text-bottom;
 }
 
 /* 闪烁动画 */
