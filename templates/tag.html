@@ -17,7 +17,7 @@
 
         <ul>
           <li class="post-list" th:each="post : ${posts.items}">
-            <a th:href="${post.status.permalink}">
+            <a th:href="@{${post.status.permalink}}">
               <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
                 >发布时间</span
               >

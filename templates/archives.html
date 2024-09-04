@@ -11,7 +11,7 @@
           <ul>
             <th:block th:each="month : ${archive.months}">
               <li class="post-list" th:each="post : ${month.posts}">
-                <a th:href="${post.status.permalink}">
+                <a th:href="@{${post.status.permalink}}">
                   <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"
                     >发布时间</span
                   >
@@ -20,7 +20,7 @@
                     ::
                     <span th:each="tag : ${post.tags}">
                       <a
-                      th:href="${tag.status.permalink}"
+                      th:href="@{${tag.status.permalink}}"
                       th:title="${tag.spec.displayName}"
                       th:text="'#'+${tag.spec.displayName}"
                       class="post-tag"
