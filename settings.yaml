@@ -19,6 +19,10 @@ spec:
           name: pixel_style
           label: 像素化风格
           help: 开启后，将使用像素风格字体及图标。
+        - $formkit: checkbox
+          name: show_toc
+          label: 显示文章目录
+          help: 开启后，将在文章页面显示文章目录。
     - group: beian
       label: 备案设置
       formSchema:

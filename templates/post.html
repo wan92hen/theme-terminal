@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+xmlns:th="https://www.thymeleaf.org"
+th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
 >
-  <th:block th:fragment="content">
-    <div class="post">
-      <h1 class="post-title" th:text="${post.spec.title}">Post Title</h1>
-      <div class="post-meta">
-        <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"> publishTime </span>
-        <span class="post-author" th:text="${':: '+post.owner.displayName}">:: Author</span>
-      </div>
-      <span class="post-tags-inline" th:each="tag : ${post.tags}">
-        <a
-          th:href="@{${tag.status.permalink}}"
-          th:title="${tag.spec.displayName}"
-          th:text="'#'+${tag.spec.displayName}"
-          class="post-tag"
-          >#Tag</a
-        >
-      </span>
-      <div class="post-content">
-        <div th:utext="${post.content.content}">Post Content</div>
-      </div>
+<th:block th:fragment="content">
+  <div class="post">
+    <h1 class="post-title" th:text="${post.spec.title}">Post Title</h1>
+    <div class="post-meta">
+      <span class="post-date" th:text="${#dates.format(post.spec.publishTime,'yyyy-MM-dd')}"> publishTime </span>
+      <span class="post-author" th:text="${':: '+post.owner.displayName}">:: Author</span>
     </div>
+    <span class="post-tags-inline" th:each="tag : ${post.tags}">
+      <a
+      th:href="@{${tag.status.permalink}}"
+      th:title="${tag.spec.displayName}"
+      th:text="'#'+${tag.spec.displayName}"
+      class="post-tag"
+      >#Tag</a
+      >
+    </span>
+    <div class="post-content">
+      <div th:utext="${post.content.content}" id="content">Post Content</div>
+    </div>
+    <div class="toc fixed top-60 z-10 p-2 max-xl:hidden" th:if="${theme.config.basic.show_toc}"></div>
     <div th:if="${haloCommentEnabled}">
       <h2>评论</h2>
       <halo:comment
@@ -51,5 +51,12 @@
         </span>
       </div>
     </div>
+    <script>
+      main.generateToc();
+      main.locateToc();
+      window.onresize = function () {
+        main.locateToc();
+      };
+    </script>
   </th:block>
 </html>

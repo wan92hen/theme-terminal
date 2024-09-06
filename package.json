@@ -50,6 +50,7 @@
     },
     "dependencies": {
         "@iconify/iconify": "^3.0.0",
-        "alpinejs": "^3.10.5"
+        "alpinejs": "^3.10.5",
+        "tocbot": "^4.29.0"
     }
 }
