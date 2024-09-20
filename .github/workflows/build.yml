@@ -111,7 +111,9 @@ jobs:
         uses: rlespinasse/github-slug-action@v4            
       - name: Compress zip
         run: |
-          PACKAGE_VERSION=$(sed -nE 's/^\s*"version": "(.*?)",$/\1/p' package.json)
+          PACKAGE_VERSION=${{ github.event.release.tag_name }}
+          sed -iE "s/(^\s*\"version\": )\".*?\",$/\1\"${PACKAGE_VERSION}\"/g" package.json
+          sed -iE "s/(^\s*version: ).*?$/\1${PACKAGE_VERSION}/g" theme.yaml
           PACKAGE_NAME=${GITHUB_REPOSITORY_NAME_PART_SLUG}          
           PRE_ZIP_FOLDER=${PACKAGE_NAME}-${PACKAGE_VERSION}
           ARTIFACT_NAME=${PRE_ZIP_FOLDER}.zip
