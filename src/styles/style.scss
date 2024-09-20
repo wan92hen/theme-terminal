@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
 @import 'buttons';
 @import 'header';
 @import 'logo';
@@ -6,3 +10,5 @@
 @import 'pagination';
 @import 'footer';
 @import 'typed-text';
+
+@import 'theme';

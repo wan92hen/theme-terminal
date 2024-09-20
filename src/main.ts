@@ -1,8 +1,3 @@
-import "./styles/tailwind.css";
-import "./styles/style.scss";
-import "./styles/theme.scss";
-import "./styles/font-hack.scss";
-
 import Alpine from "alpinejs";
 import upvote from "./upvote";
 import * as tocbot from 'tocbot';
