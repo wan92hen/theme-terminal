@@ -51,11 +51,18 @@ th:replace="~{modules/layout :: html(header = null, content = ~{::content}, foot
         </span>
       </div>
     </div>
-    <script>
-      main.generateToc();
-      main.locateToc();
+    <script type="module" th:inline="javascript">
+      [# th:if="${not theme.config.development.enabled}"]
+      import { generateToc,locateToc } from '[(|${#theme.assets("/dist/main.js")}?version=${theme.spec.version}|)]'
+      [/]
+
+      [# th:if="${theme.config.development.enabled}"]
+      import { generateToc,locateToc } from 'http://localhost:5173/main.ts'
+      [/]
+      generateToc();
+      locateToc();
       window.onresize = function () {
-        main.locateToc();
+        locateToc();
       };
     </script>
   </th:block>
