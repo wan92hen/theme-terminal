@@ -5,17 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${site.title}"></title>
-    <link rel="stylesheet" th:href="@{/assets/dist/style.css}" />
-    <link rel="stylesheet" th:href="@{/assets/dist/font-hack.css}" />
+
+    <th:block th:if="${theme.config.development.enabled}">
+      <script type="module" src="http://localhost:5173/@vite/client"></script>
+      <script type="module" src="http://localhost:5173/main.ts"></script>
+    </th:block>
+
+    <th:block th:unless="${theme.config.development.enabled}">
+      <link rel="stylesheet" th:href="@{/assets/dist/main.css?v={version}(version=${theme.spec.version})}" />
+      <link rel="manifest" th:href="@{/assets/dist/manifest.json}" />
+      <script type="module" th:src="@{/assets/dist/main.js?v={version}(version=${theme.spec.version})}"></script>
+    </th:block>
+
     <th:block th:if="${theme.config.basic.pixel_style}">
-      <link rel="stylesheet" th:href="@{/assets/dist/font-pixel.css}" />
       <style th:inline="css">
         body {
           font-family: Ark-Pixel-12-proportional-zh_cn, serif;
         }
       </style>
     </th:block>
-    <script th:src="@{/assets/dist/main.js}"></script>
   </head>
 
   <body class="main">

@@ -10,11 +10,11 @@ spec:
         - $formkit: text
           name: index_notice_title
           label: 首页公告标题
-          value: 'Hello Halo!'
+          value: "Hello Halo!"
         - $formkit: textarea
           name: index_notice_content
           label: 首页公告内容
-          value: '一款 Terminal 风格的 Halo 主题。'
+          value: "一款 Terminal 风格的 Halo 主题。"
         - $formkit: checkbox
           name: pixel_style
           label: 像素化风格
@@ -40,4 +40,11 @@ spec:
           name: gongan_link
           label: 公安备案跳转链接
           value: https://www.beian.gov.cn/
-
+    - group: development
+      label: 开发设置
+      formSchema:
+        - $formkit: checkbox
+          name: enabled
+          label: 启用开发模式
+          value: false
+          help: 仅供开发环境使用，开启此设置后，所有静态资源由 Vite 开发服务器提供，所以需要在本地启动 Vite 服务（pnpm dev）
