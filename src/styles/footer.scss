@@ -4,6 +4,8 @@
   padding: 40px 0 0 0;
   flex-grow: 0;
   opacity: .5;
+  position: relative;
+  z-index: -1;
 
   &__inner {
     display: flex;
