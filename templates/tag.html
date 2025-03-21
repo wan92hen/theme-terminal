@@ -8,7 +8,7 @@
       <div class="post">
         <h1
           class="post-title"
-          th:text="'标签：'+${tag.spec.displayName}+' ('+${tag.status.visiblePostCount}+' 篇文章)'"
+          th:text="'标签：'+${tag.spec.displayName}+' ('+${tag.status.visiblePostCount?:0}+' 篇文章)'"
         >
           标签：标签名 (n 篇文章)
         </h1>
