@@ -8,7 +8,7 @@
       <div class="post">
         <h1
           class="post-title"
-          th:text="'分类：'+${category.spec.displayName}+' ('+${category.status.visiblePostCount}+' 篇文章)'"
+          th:text="'分类：'+${category.spec.displayName}+' ('+${category.status.visiblePostCount?:0}+' 篇文章)'"
         >
           分类：分类名 (n 篇文章)
         </h1>

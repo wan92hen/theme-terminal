@@ -11,7 +11,7 @@
           <li th:each="tag: ${tags}" class="tag-list">
             <a
               th:href="@{${tag.status.permalink}}"
-              th:text="${tag.spec.displayName}+' ('+${tag.status.visiblePostCount}+' 篇文章)'"
+              th:text="${tag.spec.displayName}+' ('+${tag.status.visiblePostCount?:0}+' 篇文章)'"
             >
               标签名 (n 篇文章)
             </a>
