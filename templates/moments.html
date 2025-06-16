@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{modules/layout :: html(header = null, content = ~{::content}, footer = null)}"
+  th:replace="~{modules/layout :: html(title = |#{page.moments.title} - ${site.title}|, header = null, content = ~{::content}, footer = null)}"
 >
   <th:block th:fragment="content">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
