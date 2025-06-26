@@ -3,7 +3,8 @@ import "./styles/font-hack.scss";
 import "./styles/font-pixel.scss";
 import Alpine from "alpinejs";
 import upvote from "./upvote";
-import * as tocbot from "tocbot";
+// @ts-ignore
+import tocbot from "tocbot";
 
 window.Alpine = Alpine;
 
@@ -20,6 +21,7 @@ export function generateToc() {
     tocContainer?.remove();
     return;
   }
+  // @ts-ignore
   tocbot.init({
     tocSelector: ".toc",
     contentSelector: "#content",
