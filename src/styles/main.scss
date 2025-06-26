@@ -272,3 +272,77 @@ hr {
   margin: 0 0 0 .5rem;
   padding: 0;
 }
+
+.toc {
+  margin-left: 12px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--background);
+  border: 1px solid var(--foreground);
+  padding: 12px;
+  
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: var(--foreground);
+    border-radius: 3px;
+    
+    &:hover {
+      background: var(--blue);
+    }
+  }
+  
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .toc-list-item {
+    margin: 4px 0;
+    
+    .toc-list {
+      margin-left: 16px;
+      border-left: 1px solid var(--foreground);
+      padding-left: 8px;
+    }
+  }
+  
+  .toc-link {
+    display: block;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: var(--foreground);
+    font-size: 0.875rem;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+    
+    &.is-active-link {
+      background: var(--blue);
+      color: var(--white);
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      
+      position: relative;
+    }
+  }
+  
+  .is-active-li {
+    > .toc-link {
+      background: var(--blue);
+      color: var(--white);
+      font-weight: bold;
+    }
+  }
+}
